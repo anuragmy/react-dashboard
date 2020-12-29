@@ -1,7 +1,14 @@
-import { Checkbox } from "rsuite";
+/* eslint-disable no-dupe-keys */
+import { Checkbox, Icon } from "rsuite";
 export const data = [
   {
     id: <Checkbox />,
+    status: <Icon icon="check-circle" size="lg" style={{ color: "green" }} />,
+    title: "New Amieshire",
+    type: "New Amieshire",
+    status: <Icon icon="check-circle" size="lg" style={{ color: "green" }} />,
+    title: "New Amieshire",
+    type: "New Amieshire",
     avartar: "https://s3.amazonaws.com/uifaces/faces/twitter/justinrob/128.jpg",
     city: "New Amieshire",
     email: "Leora13@yahoo.com",
@@ -13,7 +20,6 @@ export const data = [
     date: "2016-09-23T07:57:40.195Z",
     bs: "global drive functionalities",
     catchPhrase: "Intuitive impactful software",
-    companyName: "Lebsack - Nicolas",
     words: "saepe et omnis",
     sentence: "Quos aut sunt id nihil qui.",
     stars: 820,
@@ -21,6 +27,9 @@ export const data = [
   },
   {
     id: <Checkbox />,
+    status: <Icon icon="check-circle" size="lg" style={{ color: "green" }} />,
+    title: "New Amieshire",
+    type: "New Amieshire",
     avartar:
       "https://s3.amazonaws.com/uifaces/faces/twitter/thaisselenator_/128.jpg",
     city: "New Gust",
@@ -40,6 +49,9 @@ export const data = [
   },
   {
     id: <Checkbox />,
+    status: <Icon icon="check-circle" size="lg" style={{ color: "green" }} />,
+    title: "New Amieshire",
+    type: "New Amieshire",
     avartar: "https://s3.amazonaws.com/uifaces/faces/twitter/arpitnj/128.jpg",
     city: "Lefflerstad",
     email: "Frieda.Sauer61@gmail.com",
@@ -58,6 +70,9 @@ export const data = [
   },
   {
     id: <Checkbox />,
+    status: <Icon icon="check-circle" size="lg" style={{ color: "green" }} />,
+    title: "New Amieshire",
+    type: "New Amieshire",
     avartar:
       "https://s3.amazonaws.com/uifaces/faces/twitter/brajeshwar/128.jpg",
     city: "East Catalina",
@@ -77,6 +92,9 @@ export const data = [
   },
   {
     id: <Checkbox />,
+    status: <Icon icon="check-circle" size="lg" style={{ color: "green" }} />,
+    title: "New Amieshire",
+    type: "New Amieshire",
     avartar:
       "https://s3.amazonaws.com/uifaces/faces/twitter/dev_essentials/128.jpg",
     city: "Ritchieborough",
@@ -96,6 +114,9 @@ export const data = [
   },
   {
     id: <Checkbox />,
+    status: <Icon icon="check-circle" size="lg" style={{ color: "green" }} />,
+    title: "New Amieshire",
+    type: "New Amieshire",
     avartar: "https://s3.amazonaws.com/uifaces/faces/twitter/petrangr/128.jpg",
     city: "Lake Emery",
     email: "Cody.Schultz56@gmail.com",

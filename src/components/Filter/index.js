@@ -1,6 +1,14 @@
 import React from "react";
 import { Dropdown } from "semantic-ui-react";
-import { InputGroup, Input, Icon, Button, Divider } from "rsuite";
+import { useMediaQuery } from "@material-ui/core";
+import {
+  InputGroup,
+  Input,
+  Icon,
+  Button,
+  Divider,
+  ButtonToolbar,
+} from "rsuite";
 import TabularData from "../TabularData";
 
 const friendOptions = [
@@ -30,6 +38,8 @@ const types = [
 ];
 
 const Filter = ({ open }) => {
+  const sm = useMediaQuery("(min-width:650px)");
+  console.log(sm);
   return (
     <div>
       <div>
@@ -37,20 +47,39 @@ const Filter = ({ open }) => {
           style={{
             display: "flex",
             justifyContent: "flex-end",
+            flexDirection: sm ? "row" : "column",
             padding: 10,
             marginLeft: 30,
             marginRight: 30,
           }}
         >
           <span style={{ fontSize: 28, marginRight: "auto" }}>Tasks</span>
-          <Button color="orange" style={{ marginRight: 10 }}>
+          <ButtonToolbar style={{ marginLeft: 10, marginTop: 10 }}>
+            <Button appearance="subtle" active>
+              Table
+            </Button>
+            <Button appearance="subtle">Board</Button>
+          </ButtonToolbar>
+          <Button
+            color="orange"
+            style={{
+              marginRight: 10,
+              width: "fit-content",
+              marginTop: sm && 10,
+              marginBottom: sm && 10,
+            }}
+          >
             Start Queue
           </Button>
           <Button
             color="orange"
-            style={{ padding: 10 }}
+            style={{
+              marginRight: 10,
+              width: "fit-content",
+              marginTop: sm && 10,
+              marginBottom: sm && 10,
+            }}
             onClick={open}
-            appearance="ghost"
           >
             Create Task
           </Button>

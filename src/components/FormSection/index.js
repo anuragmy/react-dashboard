@@ -43,11 +43,8 @@ const FormSection = () => {
   const changeTypeAssignedGroup = (value) => setAssignedTo(value);
   const changeDueDate = (value) => setDueDate(value);
   const changeTitle = (value) => {
-    if (
-      !value.includes("1234567890") ||
-      !value.includes("/?.,><!@#$%^&*()_+=-")
-    )
-      setText(value);
+    const regex = /^[a-zA-Z ]*$/;
+    if (value.match(regex)) setText(value);
     console.log(typeof value);
   };
 
