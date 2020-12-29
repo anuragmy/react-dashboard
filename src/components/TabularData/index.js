@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { Table, Checkbox } from "rsuite";
 import { data } from "./data";
@@ -10,8 +11,6 @@ const TabularData = () => {
     loading: false,
     sortType: "",
   });
-
-  console.log("loading", state.loading);
 
   const getData = () => {
     const { data, sortColumn, sortType } = state;
