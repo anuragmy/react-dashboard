@@ -1,6 +1,6 @@
 import React from "react";
 import { Dropdown } from "semantic-ui-react";
-import { useMediaQuery } from "@material-ui/core";
+import { useMediaQuery, Grid } from "@material-ui/core";
 import {
   InputGroup,
   Input,
@@ -31,9 +31,9 @@ const types = [
     value: "Jenny Hess",
   },
   {
-    key: "Elliot Fu",
-    text: "Type 1",
-    value: "Elliot Fu",
+    key: "Elliot Fu1",
+    text: "Type 2",
+    value: "Elliot Fu1",
   },
 ];
 
@@ -60,68 +60,59 @@ const Filter = ({ open }) => {
             </Button>
             <Button appearance="subtle">Board</Button>
           </ButtonToolbar>
-          <Button
-            color="orange"
-            style={{
-              marginRight: 10,
-              width: "fit-content",
-              marginTop: sm && 10,
-              marginBottom: sm && 10,
-            }}
-          >
+          <Button color="orange" style={{ margin: 10 }}>
             Start Queue
           </Button>
-          <Button
-            color="orange"
-            style={{
-              marginRight: 10,
-              width: "fit-content",
-              marginTop: sm && 10,
-              marginBottom: sm && 10,
-            }}
-            onClick={open}
-          >
+          <Button color="orange" style={{ margin: 10 }} onClick={open}>
             Create Task
           </Button>
         </div>
         <Divider style={{ margin: 0 }} />
       </div>
-      <div
+      <br />
+      <span>Filter By</span>
+      <Grid
+        item
+        container
+        spacing={2}
         style={{
           marginTop: 20,
-          display: "flex",
-          justifyContent: "space-around",
-          fontSize: 17,
+          fontSize: 14,
         }}
       >
-        <span>Filter By</span>
-        <Dropdown
-          inline
-          style={{ marginLeft: 20 }}
-          options={friendOptions}
-          defaultValue={friendOptions[0].value}
-        />
-
-        <Dropdown
-          inline
-          options={types}
-          style={{ marginLeft: 20 }}
-          defaultValue={types[0].value}
-        />
-
-        <Dropdown
-          inline
-          style={{ marginLeft: 20 }}
-          options={friendOptions}
-          defaultValue={friendOptions[0].value}
-        />
-        <InputGroup style={{ width: 200 }}>
-          <Input placeholder="Search for a task" />
-          <InputGroup.Addon>
-            <Icon icon="search" />
-          </InputGroup.Addon>
-        </InputGroup>
-      </div>
+        <Grid item xs={6} sm={3} md={3}>
+          <Dropdown
+            inline
+            style={{ marginLeft: 20 }}
+            options={friendOptions}
+            defaultValue={friendOptions[0].value}
+          />
+        </Grid>
+        <Grid item xs={6} sm={3} md={3}>
+          <Dropdown
+            inline
+            options={types}
+            style={{ marginLeft: 20 }}
+            defaultValue={types[0].value}
+          />
+        </Grid>
+        <Grid item xs={6} sm={3} md={3}>
+          <Dropdown
+            inline
+            style={{ marginLeft: 20 }}
+            options={friendOptions}
+            defaultValue={friendOptions[0].value}
+          />
+        </Grid>
+        <Grid item xs={6} sm={3} md={3}>
+          <InputGroup style={{ width: 200 }}>
+            <Input placeholder="Search for a task" />
+            <InputGroup.Addon>
+              <Icon icon="search" />
+            </InputGroup.Addon>
+          </InputGroup>
+        </Grid>
+      </Grid>
       <TabularData />
     </div>
   );
