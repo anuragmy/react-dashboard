@@ -35,18 +35,32 @@ const FormSection = () => {
     },
   ];
   const [type, setType] = React.useState(data.label);
+  const [text, setText] = React.useState("");
   const [assignedTo, setAssignedTo] = React.useState(dataAssignedTo.label);
   const [dueDate, setDueDate] = React.useState(dueDateData.label);
 
   const changeType = (value) => setType(value);
   const changeTypeAssignedGroup = (value) => setAssignedTo(value);
   const changeDueDate = (value) => setDueDate(value);
+  const changeTitle = (value) => {
+    if (
+      !value.includes("1234567890") ||
+      !value.includes("/?.,><!@#$%^&*()_+=-")
+    )
+      setText(value);
+    console.log(typeof value);
+  };
 
   return (
     <Form>
       <FormGroup>
         <ControlLabel>Title</ControlLabel>
-        <FormControl name="name" style={{ width: "-webkit-fill-available" }} />
+        <FormControl
+          name="name"
+          style={{ width: "-webkit-fill-available" }}
+          value={text}
+          onChange={changeTitle}
+        />
         <HelpBlock>Required</HelpBlock>
       </FormGroup>
       <FormGroup>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Dropdown } from "semantic-ui-react";
 import { InputGroup, Input, Icon, Button, Divider } from "rsuite";
+import TabularData from "../TabularData";
 
 const friendOptions = [
   {
@@ -92,6 +93,7 @@ const Filter = ({ open }) => {
           </InputGroup.Addon>
         </InputGroup>
       </div>
+      <TabularData />
     </div>
   );
 };
