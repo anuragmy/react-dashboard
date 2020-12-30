@@ -28,6 +28,7 @@ const SideDrawer = ({ close }) => {
         `}
       </style>
     </Drawer>
+  
   );
 };
 
