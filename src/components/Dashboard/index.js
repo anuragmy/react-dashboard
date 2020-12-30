@@ -26,9 +26,9 @@ const Dashboard = () => {
 
   return (
     <Layout style={{ minHeight: "90vh" }}>
-      <Sider>
+      {/* <Sider>
         <Sidebar open={open} />
-      </Sider>
+      </Sider> */}
 
       <Layout>
         <Content>

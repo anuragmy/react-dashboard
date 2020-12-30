@@ -3,6 +3,7 @@ import { Dropdown } from "semantic-ui-react";
 import { useMediaQuery, Grid } from "@material-ui/core";
 import {
   InputGroup,
+  IconButton,
   Input,
   Icon,
   Button,
@@ -54,6 +55,11 @@ const Filter = ({ open }) => {
           }}
         >
           <span style={{ fontSize: 28, marginRight: "auto" }}>Tasks</span>
+
+          <IconButton
+            icon={<Icon icon="bars" />}
+            style={{ float: "right", display: !sm && "none" }}
+          />
           <ButtonToolbar style={{ marginLeft: 10, marginTop: 10 }}>
             <Button appearance="subtle" active>
               Table
@@ -104,9 +110,15 @@ const Filter = ({ open }) => {
             defaultValue={friendOptions[0].value}
           />
         </Grid>
-        <Grid item xs={6} sm={3} md={3}>
-          <InputGroup style={{ width: 200 }}>
-            <Input placeholder="Search for a task" />
+        <Grid
+          item
+          xs={6}
+          sm={3}
+          md={3}
+          style={{ marginRight: sm ? 10 : 0, marginLeft: sm ? "auto" : 0 }}
+        >
+          <InputGroup>
+            <Input placeholder="Search for a task" style={{ width: 130 }} />
             <InputGroup.Addon>
               <Icon icon="search" />
             </InputGroup.Addon>
