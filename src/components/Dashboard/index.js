@@ -31,7 +31,7 @@ const Dashboard = () => {
   const closeSmallerSidebar = () => setShowSmallerSidebar(false);
 
 
-  const showSidebar = useMediaQuery("(min-width:640px)");
+  const showSidebar = useMediaQuery("(min-width:700px)");
 
   return (
     <Layout style={{ minHeight: "90vh" }}>

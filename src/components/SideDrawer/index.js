@@ -1,8 +1,12 @@
 import React from "react";
+import { useMediaQuery } from '@material-ui/core';
 import { Drawer, Button } from "rsuite";
 import FormSection from "../FormSection";
 
 const SideDrawer = ({ close }) => {
+  const small = useMediaQuery("(min-width:640px)");
+
+  console.log('small', small);
   return (
     <Drawer backdrop show onHide={close}>
       <Drawer.Header>
@@ -25,10 +29,14 @@ const SideDrawer = ({ close }) => {
             margin: 0px;
             padding: 20px;
           }
+           .rs-drawer-open .rs-drawer {
+             overflow: visible;
+             width: ${!small ? '300px;' : '500px'}
+           }
+         `}
         `}
       </style>
     </Drawer>
-  
   );
 };
 

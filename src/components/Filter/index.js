@@ -40,8 +40,8 @@ const types = [
 ];
 
 const Filter = ({ open, openSmallerSidebar, closeSmallerSidebar }) => {
-  const sm = useMediaQuery("(min-width:650px)");
-  console.log(sm);
+  const sm = useMediaQuery("(min-width:700px)");
+  console.log('700 min', sm);
   return (
     <div>
       <div>
