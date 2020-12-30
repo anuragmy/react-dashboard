@@ -1,14 +1,15 @@
 import React from "react";
 import { Dropdown, Menu, Divider, Header } from "semantic-ui-react";
-import { Drawer, Button } from "rsuite";
+import { Button, Drawer } from "rsuite";
 
-const Sidebar = ({ open, close }) => {
+
+const Sidebar = ({ close, open, width }) => {
   const [activeItem, setActiveItem] = React.useState("Open Tasks");
 
   const handleItemClick = (e) => setActiveItem(e.target.innerText);
 
   return (
-    <Drawer backdrop show onHide={close}>
+    <Drawer backdrop show={open} onHide={close} placement='left'>
       <Drawer.Body>
         <Menu
           secondary
@@ -49,23 +50,21 @@ const Sidebar = ({ open, close }) => {
             style={{ cursor: "pointer", color: "#40a9ff", paddingLeft: 10 }}
           >
             + Add a queue
-          </Header>
+           </Header>
         </Menu>
       </Drawer.Body>
       <Drawer.Footer>
-        <Button onClick={close} appearance="primary">
-          Confirm
-        </Button>
         <Button onClick={close} appearance="subtle">
           Cancel
-        </Button>
+         </Button>
       </Drawer.Footer>
       <style jsx="true">
         {`
-          .rs-drawer-header {
-            margin: 0px;
-            padding: 20px;
+          .rs-drawer-body {
+            overflow-x:hidden;
+            width:initial;
           }
+        
         `}
       </style>
     </Drawer>
