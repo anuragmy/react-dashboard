@@ -12,6 +12,7 @@ import {
 } from "rsuite";
 import TabularData from "../TabularData";
 
+
 const friendOptions = [
   {
     key: "Jenny Hess",
@@ -38,7 +39,7 @@ const types = [
   },
 ];
 
-const Filter = ({ open }) => {
+const Filter = ({ open, openSmallerSidebar, closeSmallerSidebar }) => {
   const sm = useMediaQuery("(min-width:650px)");
   console.log(sm);
   return (
@@ -57,9 +58,11 @@ const Filter = ({ open }) => {
 
           <IconButton
             icon={<Icon icon="bars" />}
-            style={{ float: "right", display: sm && "none", width: 'min-content' }}
+            onClick={openSmallerSidebar}
+            close={closeSmallerSidebar}
+            style={{ marginRight: 'auto', display: sm && "none", width: 'min-content' }}
           />
-          <span style={{ fontSize: 28, marginRight: "auto", marginLeft: 20, float: 'left' }}>Tasks</span>
+          <span style={{ fontSize: 28, marginRight: "auto", float: 'left' }}>Tasks</span>
 
           <ButtonToolbar style={{ marginLeft: 10, marginTop: 10 }}>
             <Button appearance="subtle" active>
@@ -87,7 +90,7 @@ const Filter = ({ open }) => {
           fontSize: 14,
         }}
       >
-        <Grid item xs={6} sm={3} md={3}>
+        <Grid item xs={6} sm={4} md={3}>
           <Dropdown
             inline
             style={{ marginLeft: 20 }}
@@ -95,7 +98,7 @@ const Filter = ({ open }) => {
             defaultValue={friendOptions[0].value}
           />
         </Grid>
-        <Grid item xs={6} sm={3} md={3}>
+        <Grid item xs={6} sm={4} md={3}>
           <Dropdown
             inline
             options={types}
@@ -103,7 +106,7 @@ const Filter = ({ open }) => {
             defaultValue={types[0].value}
           />
         </Grid>
-        <Grid item xs={6} sm={3} md={3}>
+        <Grid item xs={6} sm={4} md={3}>
           <Dropdown
             inline
             style={{ marginLeft: 20 }}
@@ -114,12 +117,13 @@ const Filter = ({ open }) => {
         <Grid
           item
           xs={6}
-          sm={3}
+          sm={4}
           md={3}
-          style={{ marginRight: sm ? 10 : 0, marginLeft: sm ? "auto" : 0 }}
+
+          style={{ marginRight: 'auto', marginLeft: 'auto' }}
         >
           <InputGroup>
-            <Input placeholder="Search for a task" style={{ width: 130 }} />
+            <Input placeholder="Search for a task" />
             <InputGroup.Addon>
               <Icon icon="search" />
             </InputGroup.Addon>
