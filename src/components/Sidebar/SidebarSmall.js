@@ -62,7 +62,9 @@ const Sidebar = ({ close, open, width }) => {
         {`
           .rs-drawer-body {
             overflow-x:hidden;
-            width:initial;
+          }
+          .rs-drawer-left.rs-drawer-sm, .rs-drawer-right.rs-drawer-sm {
+            width: 250px;
           }
         
         `}
